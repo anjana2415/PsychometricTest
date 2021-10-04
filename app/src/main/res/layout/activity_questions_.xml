@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TEST.Questions_Activity">
+
+    <com.fevziomurtekin.customprogress.Dialog
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:id="@+id/question_parent"
+    android:visibility="visible"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/question_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.androchef.happytimer.countdowntimer.CircularCountDownView
+                android:id="@+id/circularCountDownView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:stroke_foreground_color="@color/grey"
+                app:stroke_background_color="@color/blue"
+                app:stroke_background_thickness="31dp"
+                app:stroke_foreground_thickness="40dp"
+                app:timer_text_color="@color/black"
+                app:layout_constraintHorizontal_bias="1"
+                app:timer_text_shown="true"
+                app:timer_text_isBold="true"
+                app:timer_text_format="MINUTE_SECOND"
+                app:timer_text_size="20sp"
+                app:timer_type="COUNT_DOWN"
+                app:layout_constraintStart_toEndOf="@+id/number_indicator"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/number_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorSize="100dp"
+                app:trackThickness="12dp"
+                android:layout_gravity="center"
+                app:indicatorColor="@color/blue"
+                app:layout_constraintHorizontal_bias="0"
+                app:trackColor="@color/grey"
+                android:progress="1"
+                android:max="10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/number_indicator"
+                app:layout_constraintEnd_toEndOf="@+id/number_indicator"
+                app:layout_constraintStart_toStartOf="@+id/number_indicator"
+                app:layout_constraintTop_toTopOf="@+id/number_indicator" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/option_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            app:cornerRadius="20dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/blue"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            app:strokeWidth="2dp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/blue"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            app:cornerRadius="20dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/blue"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+            android:padding="12dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/blue"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Button" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/share_btn"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="50dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        app:backgroundTint="#FFFFFF"
+        android:text="SHARE"
+        app:cornerRadius="15dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/question_layout"
+        app:layout_constraintTop_toBottomOf="@id/option_layout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_btn"
+        android:layout_width="120dp"
+        app:cornerRadius="15dp"
+        android:layout_height="55dp"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="NEXT"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/question_layout"
+        app:layout_constraintStart_toEndOf="@+id/share_btn"
+        app:layout_constraintTop_toBottomOf="@id/option_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

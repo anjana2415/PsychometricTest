@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "585418911116",
+    "project_id": "psychometrictest-40869",
+    "storage_bucket": "psychometrictest-40869.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585418911116:android:eebab3281c299d6130faa9",
+        "android_client_info": {
+          "package_name": "com.example.psychometrictest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585418911116-occq5pokjau0vn6h1t72gdjefj8rgc3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjv0Am10_2IoKAMppdOmLidPJ6DgqlN-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585418911116-occq5pokjau0vn6h1t72gdjefj8rgc3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

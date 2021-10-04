@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PsychometricTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- OTP SCREEN -->
+    <string name="otp_code_text">Code</string>
+    <string name="otp_verification_text">Verification</string>
+    <string name="otp_description_text">Enter one time password</string>
+    <!-- FORGET PASSWORD -->
+    <string name="forget_password">forget password</string>
+    <string name="forget_password_details">Provide your accounts email for which you want to reset your password</string>
+    <string name="next_btn">next</string>
+    <!-- MAKE SELECTION  -->
+    <string name="make_selection">make   selection</string>
+    <string name="makeselection_details">Select which contact details should we use to reset your password</string>
+    <string name="via_sms">via sms:</string>
+    <string name="via_email">via email:</string>
+    <!-- SET NEW PASSWORD-->
+    <string name="new_password">new password</string>
+    <string name="newpassword_details">Your identity has been verified!Set your new password</string>
+    <!-- FORGET PASSWORD SUCCESS PAGE  -->
+    <string name="success_msg">PASSWORD UPDATED</string>
+    <string name="success">Your password has been updated!</string>
+
+    <string name="firstins">1.The duration of one test is 20 minutes</string>
+    <string name="secondins">2.There are 10 questions in each Test</string>
+    <string name="thridins">3.Do not leave the test when started it will automatically submit the answer</string>
+    <string name="fourthins">4.Do not take call,message or other Application when the test started</string>
+
+</resources>
