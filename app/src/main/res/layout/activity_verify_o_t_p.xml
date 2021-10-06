@@ -74,7 +74,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
+            android:background="@drawable/unselectedbtn"
             android:text="Verify Code"
             android:fontFamily="@font/josefine"
             android:layout_marginTop="30dp"

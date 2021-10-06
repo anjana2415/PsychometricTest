@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PsychometricTest">
-        <activity android:name=".TEST.Questions_Activity" android:exported="true"/>
+        <activity android:name=".TEST.Score_Activity"></activity>
+        <activity
+            android:name=".TEST.Questions_Activity"
+            android:exported="true" />
         <activity android:name=".TEST.StartTest_Activity" />
         <activity android:name=".TEST.test" />
         <activity android:name=".Login.ForgetPasswordSuccess" />
@@ -21,12 +24,15 @@
         <activity android:name=".Login.MakeSelection" />
         <activity android:name=".Login.ForgetPassword" />
         <activity android:name=".Login.VerifyOTP" />
-        <activity android:name=".Login.ProfileActivity" android:exported="true"/>
+        <activity
+            android:name=".Login.ProfileActivity"
+            android:exported="true" />
         <activity android:name=".Login.createAccountActivity" />
         <activity android:name=".Login.SplashscreenActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Login.MainActivity" />

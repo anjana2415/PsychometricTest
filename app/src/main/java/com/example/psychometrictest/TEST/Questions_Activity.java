@@ -1,6 +1,7 @@
 package com.example.psychometrictest.TEST;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -162,6 +163,31 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
 
             }
         } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(Questions_Activity.this);
+            builder.setCancelable(true);
+            View view = getLayoutInflater().inflate(R.layout.alertdialog_layout,null);
+            Button cancel  = view.findViewById(R.id.cancel);
+            Button sumbit = view.findViewById(R.id.submit_btn);
+
+            builder.setView(view);
+            AlertDialog alertDialog =builder.create();
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+            sumbit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                    Intent intent = new Intent(Questions_Activity.this,Score_Activity.class);
+                    startActivity(intent);
+                    Questions_Activity.this.finish();
+                }
+            });
+            alertDialog.show();
+
             Toast.makeText(this, "All Questions are loaded", Toast.LENGTH_SHORT).show();
         }
     }

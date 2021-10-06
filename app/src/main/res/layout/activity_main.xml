@@ -31,13 +31,16 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
-            android:fontFamily="@font/josefineregular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:startIconDrawable="@drawable/ic_email_icon"
             app:startIconTint="@color/blue"
             android:layout_marginTop="68dp"
             android:hint="Email"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
             app:hintTextColor="@color/grey"
             app:boxStrokeColor="@color/blue"
             app:endIconMode="clear_text"
@@ -59,7 +62,6 @@
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
-            android:fontFamily="@font/josefineregular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:startIconTint="@color/blue"
@@ -68,6 +70,10 @@
             app:boxStrokeWidthFocused="2dp"
             android:layout_marginTop="2dp"
             android:hint="Password"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
             android:textColorHint="@color/grey"
             app:startIconDrawable="@drawable/ic_login_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -101,7 +107,6 @@
             android:layout_height="wrap_content"
             >
             <CheckBox
-                android:fontFamily="@font/josefineregular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.CompoundButton.CheckBox"
@@ -111,7 +116,6 @@
                 android:layout_centerVertical="true"/>
             <Button
                 android:id="@+id/forget_password"
-                android:fontFamily="@font/josefineregular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FORGOT PASSWORD"
@@ -127,16 +131,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LOGIN"
-            android:fontFamily="@font/josefineregular"
             android:layout_gravity="center"
             android:textColor="@color/white"
-            android:background="@color/blue"/>
+            android:background="@drawable/unselectedbtn"/>
         <Button
             android:id="@+id/create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CREATE ACCOUNT"
-            android:fontFamily="@font/josefineregular"
             android:layout_marginTop="20dp"
             android:textColor="@color/blue"
             android:layout_gravity="center"
