@@ -21,7 +21,6 @@
         <activity android:name=".TEST.test" />
         <activity android:name=".Login.ForgetPasswordSuccess" />
         <activity android:name=".Login.SetNewPassword" />
-        <activity android:name=".Login.MakeSelection" />
         <activity android:name=".Login.ForgetPassword" />
         <activity android:name=".Login.VerifyOTP" />
         <activity

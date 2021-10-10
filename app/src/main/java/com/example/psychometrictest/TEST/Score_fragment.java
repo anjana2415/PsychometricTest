@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 
 import com.example.psychometrictest.R;
 
+public class Score_fragment extends Fragment {
 
-public class LeaderFragment extends Fragment {
 
-
-    public LeaderFragment() {
+    public Score_fragment() {
         // Required empty public constructor
     }
+
 
 
 
@@ -24,6 +24,6 @@ public class LeaderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leader, container, false);
+        return inflater.inflate(R.layout.fragment_score_fragment, container, false);
     }
 }

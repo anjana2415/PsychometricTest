@@ -20,6 +20,7 @@ public class RealtimeDB {
 
         if (reference != null) {
             reference.addValueEventListener(new ValueEventListener() {
+
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 

@@ -44,8 +44,9 @@ public class test extends AppCompatActivity {
 
         // FirebaseQuery.loadTestData();
 //
-        getSupportActionBar().setTitle(RealtimeDB.homeList.get(getIntent().getIntExtra("position",0)).getName());
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+//        getSupportActionBar().setTitle(RealtimeDB.homeList.get(getIntent().getIntExtra("position",0)).getName());
+//        getSupportActionBar().setTitle("Psychometric Test");
+//        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);

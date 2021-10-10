@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="YOUR SCORE "
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -33,53 +33,48 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/score"
+            android:gravity="center"
             android:layout_gravity="center"
             android:background="@drawable/bg_textview_count_down_circle"
             android:backgroundTint="@color/white"
             android:text="20"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="32sp"
             android:textAlignment="center"
             style="@style/TextAppearance.AppCompat.Medium"
             />
-        <RelativeLayout
 
+        <LinearLayout
+            android:id="@+id/report_view"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            android:padding="10dp">
-
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email_icon"
+            android:drawableTint="@color/blue"
+            android:weightSum="9"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="15dp"
+            android:background="@color/white">
             <ImageView
-                android:id="@+id/email_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_weight="2"
                 android:src="@drawable/ic_email_icon"
                 app:tint="@color/blue" />
 
             <TextView
-                android:id="@+id/email_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_toRightOf="@+id/email_icon"
-                android:fontFamily="@font/josefine"
+                android:layout_weight="7"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center"
                 android:text="Generate Report"
                 android:textColor="@color/blue"
-                 android:layout_toEndOf="@id/email_icon"
-                android:textSize="25sp" />
+                android:textSize="22sp" />
+        </LinearLayout>
 
-
-
-            <Button
-                android:id="@+id/score_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#00000000" />
-        </RelativeLayout>
 
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.example.psychometrictest.TEST;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -21,6 +22,9 @@ import java.util.List;
 public class SkillTestsFragment extends Fragment {
 
 
+    private ProgressDialog progressDialog;
+
+
     public SkillTestsFragment() {
 
     }
@@ -32,6 +36,9 @@ public class SkillTestsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        progressDialog = new ProgressDialog(getContext());
+        RealtimeDB.reference = FirebaseDatabase.getInstance().getReference("Categories");
+        RealtimeDB.getHomeList();
         View view = inflater.inflate(R.layout.fragment_skill_tests, container, false);
         testview = view.findViewById(R.id .skilltest);
         skillAdapter adapter = new skillAdapter(RealtimeDB.homeList, getContext());

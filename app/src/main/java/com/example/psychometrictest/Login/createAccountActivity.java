@@ -72,7 +72,7 @@ public class createAccountActivity extends AppCompatActivity {
                     User user =new User(_firstname,_lastname,_username,_email,_password,_phonenumber);
                     db = FirebaseDatabase.getInstance();
                     reference=db.getReference("User");
-                    reference.child(_username).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    reference.child(_phonenumber).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             signupUser();

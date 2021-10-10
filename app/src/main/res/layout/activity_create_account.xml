@@ -20,8 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CREATE ACCOUNT"
+            android:layout_marginTop="10dp"
             android:textColor="@color/blue"
-            android:textSize="30sp"
+            android:textSize="50sp"
             android:textStyle="bold"
              />
 
@@ -30,7 +31,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:orientation="vertical">
 
 
@@ -198,9 +199,10 @@
             android:id="@+id/loginbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
             android:background="@drawable/unselectedbtn"
             android:elevation="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="LOGIN"
             android:textColor="@color/white"
             android:transitionName="transition_next_btn" />

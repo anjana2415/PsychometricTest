@@ -1,11 +1,16 @@
 package com.example.psychometrictest.Login;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.psychometrictest.MycompleteListener;
@@ -20,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() != null) {
             Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
 
@@ -53,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            RealtimeDB.reference = FirebaseDatabase.getInstance().getReference("Categories");
-                            RealtimeDB.getHomeList();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                           Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                           intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                           startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
@@ -76,6 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    }
 
 
-}

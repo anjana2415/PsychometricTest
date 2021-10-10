@@ -2,9 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:gravity="bottom"
     android:background="@color/blue"
     android:orientation="vertical"
+    android:gravity="center_vertical"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
@@ -22,11 +22,12 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="name lastname"
+        android:text="name\nlastname"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         />
     <TextView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

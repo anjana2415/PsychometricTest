@@ -45,16 +45,17 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
     private Button share, next;
     private ArrayList<QuestionModel> questionList;
     private int position = 0;
+    private int answerCount = 0;
     private int progress = 1;
     private String qAnswer;
     private boolean isQuestionFull = false;
     private CircularCountDownView countDownView;
-    //  private ProgressDialog progressDialog ;
     private DatabaseReference reference;
     QuestionModel questionModel;
     private Dialog progressDialog;
     private ConstraintLayout parentLayout;
     private Animation animation;
+    private boolean isCountDownFinished = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,22 +83,6 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
         progressDialog.show();
         countDownView.initTimer(10);
 
-//        countDownView.setOnTickListener(new HappyTimer.OnTickListener() {
-//            @Override
-//            public void onTick(int i, int i1) {
-//
-//            }
-//
-//            @Override
-//            public void onTimeUp() {
-//                countDownView.resetTimer();
-//                loadQuestions();
-//                countDownView.initTimer(10);
-//                countDownView.startTimer();
-//            }
-//        });
-
-
         questionList = new ArrayList<>();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +105,12 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
             @Override
             public void onTimeUp() {
                 countDownTimerState();
-                loadQuestions();
+                if(!isCountDownFinished)
+                    loadQuestions();
+                else {
+                    countDownView.stopTimer();
+                    countDownView.resetTimer();
+                }
             }
         });
     }
@@ -163,14 +153,15 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
 
             }
         } else {
+            isCountDownFinished = true;
             AlertDialog.Builder builder = new AlertDialog.Builder(Questions_Activity.this);
             builder.setCancelable(true);
-            View view = getLayoutInflater().inflate(R.layout.alertdialog_layout,null);
-            Button cancel  = view.findViewById(R.id.cancel);
+            View view = getLayoutInflater().inflate(R.layout.alertdialog_layout, null);
+            Button cancel = view.findViewById(R.id.cancel);
             Button sumbit = view.findViewById(R.id.submit_btn);
 
             builder.setView(view);
-            AlertDialog alertDialog =builder.create();
+            AlertDialog alertDialog = builder.create();
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -181,14 +172,18 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
                 @Override
                 public void onClick(View v) {
                     alertDialog.dismiss();
-                    Intent intent = new Intent(Questions_Activity.this,Score_Activity.class);
+                    Intent intent = new Intent(Questions_Activity.this, Score_Activity.class);
+                    intent.putExtra("rightAnswer", answerCount+"");
+                    intent.putExtra("totalQuestion", questionList.size());
                     startActivity(intent);
-                    Questions_Activity.this.finish();
                 }
             });
-            alertDialog.show();
+            if(!alertDialog.isShowing())
+                alertDialog.show();
+            else
+                alertDialog.dismiss();
 
-            Toast.makeText(this, "All Questions are loaded", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "All Questions are loaded", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -233,27 +228,13 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
         });
     }
 
-    void assignAnswer(int position) {
-        Log.d(TAG, "assignAnswer: called with position " + position);
-
-        if (questionList.get(position).getAnswer().equals("A"))
-            qAnswer = "A";
-        if (questionList.get(position).getAnswer().equals("B"))
-            qAnswer = "B";
-        if (questionList.get(position).getAnswer().equals("C"))
-            qAnswer = "C";
-        if (questionList.get(position).getAnswer().equals("D"))
-            qAnswer = "D";
-    }
 
     @Override
     public void onClick(View v) {
 
-        if (position > 0) {
-            assignAnswer(position - 1);
-        } else {
-            assignAnswer(position);
-        }
+        qAnswer = questionList.get(Integer.parseInt(progressText.getText().toString())-1).getAnswer().toString();
+//        Log.d(TAG, "onClick: "+ qAnswer);
+
         Log.d(TAG, "onClick: " + String.valueOf(qAnswer));
         option1.setBackgroundColor(Color.parseColor("#ffffff"));
         option2.setBackgroundColor(Color.parseColor("#ffffff"));
@@ -262,19 +243,27 @@ public class Questions_Activity extends AppCompatActivity implements View.OnClic
 
         switch (v.getId()) {
             case R.id.option1:
-                    v.setBackgroundColor(getResources().getColor(R.color.blue));
+                v.setBackgroundColor(getResources().getColor(R.color.blue));
+                if(option1.getText().toString().toLowerCase().equals(qAnswer.toLowerCase()))
+                    answerCount++;
                 break;
 
             case R.id.option2:
-                    v.setBackgroundColor(getResources().getColor(R.color.blue));
+                v.setBackgroundColor(getResources().getColor(R.color.blue));
+                if(option2.getText().toString().toLowerCase().equals(qAnswer.toLowerCase()))
+                    answerCount++;
                 break;
 
             case R.id.option3:
-                    v.setBackgroundColor(getResources().getColor(R.color.blue));
+                v.setBackgroundColor(getResources().getColor(R.color.blue));
+                if(option3.getText().toString().toLowerCase().equals(qAnswer.toLowerCase()))
+                    answerCount++;
                 break;
 
             case R.id.option4:
-                    v.setBackgroundColor(getResources().getColor(R.color.blue));
+                v.setBackgroundColor(getResources().getColor(R.color.blue));
+                if(option4.getText().toString().toLowerCase().equals(qAnswer.toLowerCase()))
+                    answerCount++;
                 break;
 
         }
